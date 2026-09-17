@@ -197,15 +197,15 @@ display(silver.filter(F.abs("rendement") > 0.25)
 TAUX_SANS_RISQUE = 0.025   # 2,5 % annuel
 JOURS_BOURSE = 252
 
-base = silver_fx.filter(F.col("rendement_usd").isNotNull())
+base = silver.filter(F.col("rendement").isNotNull())
 
 metriques = (base.groupBy("ticker", "nom", "place", "devise")
     .agg(
         F.count("*").alias("nb_seances"),
         F.min("date").alias("debut"),
         F.max("date").alias("fin"),
-        F.avg("rendement_usd").alias("rendement_moyen_jour"),
-        F.stddev("rendement_usd").alias("volatilite_jour"),
+        F.avg("rendement").alias("rendement_moyen_jour"),
+        F.stddev("rendement").alias("volatilite_jour"),
     )
     .withColumn("rendement_annuel", F.col("rendement_moyen_jour") * JOURS_BOURSE)
     .withColumn("volatilite_annuelle", F.col("volatilite_jour") * F.sqrt(F.lit(JOURS_BOURSE)))
@@ -235,21 +235,6 @@ dd = (silver
 
 gold = metriques.join(dd, on="ticker", how="left")
 display(gold.orderBy(F.desc("sharpe")))
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-(gold.write.format("delta").mode("overwrite")
-     .option("overwriteSchema", "true")
-     .saveAsTable("gold_metriques"))
-
-display(spark.sql("SELECT * FROM gold_metriques ORDER BY sharpe DESC"))
 
 # METADATA ********************
 
@@ -301,6 +286,86 @@ silver_fx = (silver_fx
 
 # CELL ********************
 
+TAUX_SANS_RISQUE = 0.025   # 2,5 % annuel
+JOURS_BOURSE = 252
+
+base = silver_fx.filter(F.col("rendement_usd").isNotNull())
+
+metriques = (base.groupBy("ticker", "nom", "place", "devise")
+    .agg(
+        F.count("*").alias("nb_seances"),
+        F.min("date").alias("debut"),
+        F.max("date").alias("fin"),
+        F.avg("rendement_usd").alias("rendement_moyen_jour"),
+        F.stddev("rendement_usd").alias("volatilite_jour"),
+    )
+    .withColumn("rendement_annuel", F.col("rendement_moyen_jour") * JOURS_BOURSE)
+    .withColumn("volatilite_annuelle", F.col("volatilite_jour") * F.sqrt(F.lit(JOURS_BOURSE)))
+    .withColumn("sharpe",
+        (F.col("rendement_annuel") - F.lit(TAUX_SANS_RISQUE)) / F.col("volatilite_annuelle"))
+)
+
+display(metriques.orderBy(F.desc("sharpe")))
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+w = Window.partitionBy("ticker").orderBy("date").rowsBetween(Window.unboundedPreceding, 0)
+
+dd = (silver_fx
+    .withColumn("plus_haut", F.max("close_ajuste").over(w))
+    .withColumn("drawdown", F.col("close_ajuste") / F.col("plus_haut") - 1)
+    .groupBy("ticker")
+    .agg(F.min("drawdown").alias("drawdown_max"))
+)
+
+gold = metriques.join(dd, on="ticker", how="left")
+display(gold.orderBy(F.desc("sharpe")))
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+(gold.write.format("delta").mode("overwrite")
+     .option("overwriteSchema", "true")
+     .saveAsTable("gold_metriques"))
+
+display(spark.sql("SELECT * FROM gold_metriques ORDER BY sharpe DESC"))
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+w = Window.partitionBy("ticker").orderBy("date").rowsBetween(Window.unboundedPreceding, 0)
+
+comparaison = (silver_fx
+    .withColumn("haut_local", F.max("close_ajuste").over(w))
+    .withColumn("haut_usd", F.max("close_usd").over(w))
+    .withColumn("dd_local", F.col("close_ajuste") / F.col("haut_local") - 1)
+    .withColumn("dd_usd", F.col("close_usd") / F.col("haut_usd") - 1)
+    .groupBy("ticker", "devise")
+    .agg(F.min("dd_local").alias("drawdown_local"),
+         F.min("dd_usd").alias("drawdown_usd"))
+    .withColumn("ecart", F.col("drawdown_usd") - F.col("drawdown_local"))
+)
+
+display(comparaison.orderBy("ecart"))
 
 # METADATA ********************
 
