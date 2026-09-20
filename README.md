@@ -70,12 +70,22 @@ Sans `partitionBy("ticker")`, la première cotation de Tesla serait comparée à
 
 Le marché des changes cote 3 045 jours sur la période, les bourses entre 2 877 et 2 994. Une jointure exacte sur la date perdrait des lignes. Le pipeline fait une jointure à gauche puis reporte le dernier taux connu par fenêtre — le motif standard pour aligner deux sources de fréquences différentes.
 
-### Prix bruts et ajustés
+### Une seule série de prix, explicitement ajustée
 
-L'extraction bronze conserve séparément `close` et `adj_close` grâce à
-`auto_adjust=False`. Le notebook Fabric utilise ensuite `close` comme base de
-calcul et le renomme `close_ajuste` dans la couche silver. Cette convention
-rend le choix de la série utilisée par les indicateurs explicite.
+L'extraction demande `auto_adjust=False` pour obtenir le prix brut et le prix
+ajusté séparément. Dans les faits, yfinance ne renvoie plus de colonne
+`Adj Close` distincte : les cours retournés sont déjà ajustés des splits et
+des dividendes. Nvidia apparaît ainsi à 1,69 $ en novembre 2016 alors qu'il
+cotait autour de 85 $ à l'époque — deux splits sont intervenus depuis.
+
+Conserver deux colonnes identiques en laissant croire qu'elles diffèrent serait
+trompeur. Le pipeline n'en garde donc qu'une, renommée `close_ajuste` au silver
+pour que la nature de la série soit explicite pour quiconque lit la table.
+
+Cette ambiguïté de la source est la raison pour laquelle le bronze horodate et
+trace chaque extraction : l'ajustement étant recalculé rétroactivement à chaque
+distribution, deux extractions espacées de quelques mois ne renvoient pas les
+mêmes valeurs historiques.
 
 ### Partitionnement des tables
 
