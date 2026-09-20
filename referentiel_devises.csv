@@ -1,0 +1,201 @@
+code_iso3,pays,devise,code_devise
+AFG,Afghanistan,afghani,AFN
+ZAF,Afrique du Sud,rand,ZAR
+ALB,Albanie,lek,ALL
+DZA,Algérie,dinar algérien,DZD
+DEU,Allemagne,euro,EUR
+AND,Andorre,euro,EUR
+AGO,Angola,kwanza,AOA
+ATG,Antigua-et-Barbuda,dollar des Caraïbes orientales,XCD
+SAU,Arabie saoudite,riyal saoudien,SAR
+ARG,Argentine,peso argentin,ARS
+ARM,Arménie,dram,AMD
+AUS,Australie,dollar australien,AUD
+AUT,Autriche,euro,EUR
+AZE,Azerbaïdjan,manat azerbaïdjanais,AZN
+BHS,Bahamas,dollar bahaméen,BSD
+BHR,Bahreïn,dinar bahreïni,BHD
+BGD,Bangladesh,taka,BDT
+BRB,Barbade,dollar barbadien,BBD
+BEL,Belgique,euro,EUR
+BLZ,Belize,dollar bélizien,BZD
+BEN,Bénin,franc CFA (BCEAO),XOF
+BTN,Bhoutan,ngultrum,BTN
+BLR,Biélorussie,rouble biélorusse,BYN
+BOL,Bolivie,boliviano,BOB
+BIH,Bosnie-Herzégovine,mark convertible,BAM
+BWA,Botswana,pula,BWP
+BRA,Brésil,réal,BRL
+BRN,Brunei,dollar de Brunei,BND
+BGR,Bulgarie,euro,EUR
+BFA,Burkina Faso,franc CFA (BCEAO),XOF
+BDI,Burundi,franc burundais,BIF
+KHM,Cambodge,riel,KHR
+CMR,Cameroun,franc CFA (BEAC),XAF
+CAN,Canada,dollar canadien,CAD
+CPV,Cap-Vert,escudo cap-verdien,CVE
+CAF,République centrafricaine,franc CFA (BEAC),XAF
+CHL,Chili,peso chilien,CLP
+CHN,Chine,yuan renminbi,CNY
+CYP,Chypre,euro,EUR
+COL,Colombie,peso colombien,COP
+COM,Comores,franc comorien,KMF
+COG,Congo,franc CFA (BEAC),XAF
+COD,République démocratique du Congo,franc congolais,CDF
+PRK,Corée du Nord,won nord-coréen,KPW
+KOR,Corée du Sud,won sud-coréen,KRW
+CRI,Costa Rica,colón,CRC
+CIV,Côte d'Ivoire,franc CFA (BCEAO),XOF
+HRV,Croatie,euro,EUR
+CUB,Cuba,peso cubain,CUP
+DNK,Danemark,couronne danoise,DKK
+DJI,Djibouti,franc de Djibouti,DJF
+DMA,Dominique,dollar des Caraïbes orientales,XCD
+DOM,République dominicaine,peso dominicain,DOP
+EGY,Égypte,livre égyptienne,EGP
+ARE,Émirats arabes unis,dirham des Émirats,AED
+ECU,Équateur,dollar américain,USD
+ERI,Érythrée,nakfa,ERN
+ESP,Espagne,euro,EUR
+EST,Estonie,euro,EUR
+SWZ,Eswatini,lilangeni,SZL
+USA,États-Unis,dollar américain,USD
+ETH,Éthiopie,birr,ETB
+FJI,Fidji,dollar fidjien,FJD
+FIN,Finlande,euro,EUR
+FRA,France,euro,EUR
+GAB,Gabon,franc CFA (BEAC),XAF
+GMB,Gambie,dalasi,GMD
+GEO,Géorgie,lari,GEL
+GHA,Ghana,cedi,GHS
+GRC,Grèce,euro,EUR
+GRD,Grenade,dollar des Caraïbes orientales,XCD
+GTM,Guatemala,quetzal,GTQ
+GIN,Guinée,franc guinéen,GNF
+GNB,Guinée-Bissau,franc CFA (BCEAO),XOF
+GNQ,Guinée équatoriale,franc CFA (BEAC),XAF
+GUY,Guyana,dollar guyanien,GYD
+HTI,Haïti,gourde,HTG
+HND,Honduras,lempira,HNL
+HKG,"Hong Kong, RAS",dollar de Hong Kong,HKD
+HUN,Hongrie,forint,HUF
+IND,Inde,roupie indienne,INR
+IDN,Indonésie,roupie indonésienne,IDR
+IRQ,Irak,dinar irakien,IQD
+IRN,Iran,rial iranien,IRR
+IRL,Irlande,euro,EUR
+ISL,Islande,couronne islandaise,ISK
+ISR,Israël,nouveau shekel,ILS
+ITA,Italie,euro,EUR
+JAM,Jamaïque,dollar jamaïcain,JMD
+JPN,Japon,yen,JPY
+JOR,Jordanie,dinar jordanien,JOD
+KAZ,Kazakhstan,tenge,KZT
+KEN,Kenya,shilling kényan,KES
+KGZ,Kirghizistan,som,KGS
+KIR,Kiribati,dollar australien,AUD
+XKX,Kosovo,euro,EUR
+KWT,Koweït,dinar koweïtien,KWD
+LAO,Laos,kip,LAK
+LSO,Lesotho,loti,LSL
+LVA,Lettonie,euro,EUR
+LBN,Liban,livre libanaise,LBP
+LBR,Liberia,dollar libérien,LRD
+LBY,Libye,dinar libyen,LYD
+LIE,Liechtenstein,franc suisse,CHF
+LTU,Lituanie,euro,EUR
+LUX,Luxembourg,euro,EUR
+MAC,"Macao, RAS",pataca,MOP
+MKD,Macédoine du Nord,denar,MKD
+MDG,Madagascar,ariary,MGA
+MYS,Malaisie,ringgit,MYR
+MWI,Malawi,kwacha malawien,MWK
+MDV,Maldives,rufiyaa,MVR
+MLI,Mali,franc CFA (BCEAO),XOF
+MLT,Malte,euro,EUR
+MAR,Maroc,dirham marocain,MAD
+MHL,Îles Marshall,dollar américain,USD
+MUS,Maurice,roupie mauricienne,MUR
+MRT,Mauritanie,ouguiya,MRU
+MEX,Mexique,peso mexicain,MXN
+FSM,Micronésie,dollar américain,USD
+MDA,Moldavie,leu moldave,MDL
+MCO,Monaco,euro,EUR
+MNG,Mongolie,tugrik,MNT
+MNE,Monténégro,euro,EUR
+MOZ,Mozambique,metical,MZN
+MMR,Myanmar,kyat,MMK
+NAM,Namibie,dollar namibien,NAD
+NRU,Nauru,dollar australien,AUD
+NPL,Népal,roupie népalaise,NPR
+NIC,Nicaragua,córdoba,NIO
+NER,Niger,franc CFA (BCEAO),XOF
+NGA,Nigeria,naira,NGN
+NOR,Norvège,couronne norvégienne,NOK
+NZL,Nouvelle-Zélande,dollar néo-zélandais,NZD
+OMN,Oman,rial omanais,OMR
+UGA,Ouganda,shilling ougandais,UGX
+UZB,Ouzbékistan,sum,UZS
+PAK,Pakistan,roupie pakistanaise,PKR
+PLW,Palaos,dollar américain,USD
+PSE,Cisjordanie et Gaza,nouveau shekel,ILS
+PAN,Panama,balboa (dollar américain en circulation),PAB
+PNG,Papouasie-Nouvelle-Guinée,kina,PGK
+PRY,Paraguay,guarani,PYG
+NLD,Pays-Bas,euro,EUR
+PER,Pérou,sol,PEN
+PHL,Philippines,peso philippin,PHP
+POL,Pologne,zloty,PLN
+PRT,Portugal,euro,EUR
+PRI,Porto Rico,dollar américain,USD
+QAT,Qatar,riyal qatari,QAR
+ROU,Roumanie,leu roumain,RON
+GBR,Royaume-Uni,livre sterling,GBP
+RUS,Russie,rouble russe,RUB
+RWA,Rwanda,franc rwandais,RWF
+KNA,Saint-Christophe-et-Niévès,dollar des Caraïbes orientales,XCD
+SMR,Saint-Marin,euro,EUR
+VCT,Saint-Vincent-et-les-Grenadines,dollar des Caraïbes orientales,XCD
+LCA,Sainte-Lucie,dollar des Caraïbes orientales,XCD
+SLB,Îles Salomon,dollar des Salomon,SBD
+SLV,Salvador,dollar américain,USD
+WSM,Samoa,tala,WST
+STP,Sao Tomé-et-Principe,dobra,STN
+SEN,Sénégal,franc CFA (BCEAO),XOF
+SRB,Serbie,dinar serbe,RSD
+SYC,Seychelles,roupie seychelloise,SCR
+SLE,Sierra Leone,leone,SLE
+SGP,Singapour,dollar de Singapour,SGD
+SVK,Slovaquie,euro,EUR
+SVN,Slovénie,euro,EUR
+SOM,Somalie,shilling somalien,SOS
+SDN,Soudan,livre soudanaise,SDG
+SSD,Soudan du Sud,livre sud-soudanaise,SSP
+LKA,Sri Lanka,roupie srilankaise,LKR
+SWE,Suède,couronne suédoise,SEK
+CHE,Suisse,franc suisse,CHF
+SUR,Suriname,dollar surinamais,SRD
+SYR,Syrie,livre syrienne,SYP
+TJK,Tadjikistan,somoni,TJS
+TZA,Tanzanie,shilling tanzanien,TZS
+TCD,Tchad,franc CFA (BEAC),XAF
+CZE,Tchéquie,couronne tchèque,CZK
+THA,Thaïlande,baht,THB
+TLS,Timor oriental,dollar américain,USD
+TGO,Togo,franc CFA (BCEAO),XOF
+TON,Tonga,pa'anga,TOP
+TTO,Trinité-et-Tobago,dollar de Trinité-et-Tobago,TTD
+TUN,Tunisie,dinar tunisien,TND
+TKM,Turkménistan,manat turkmène,TMT
+TUR,Turquie,livre turque,TRY
+TUV,Tuvalu,dollar australien,AUD
+UKR,Ukraine,hryvnia,UAH
+URY,Uruguay,peso uruguayen,UYU
+VUT,Vanuatu,vatu,VUV
+VAT,Vatican,euro,EUR
+VEN,Venezuela,bolívar,VES
+VNM,Viêt Nam,dong,VND
+YEM,Yémen,rial yéménite,YER
+ZMB,Zambie,kwacha zambien,ZMW
+ZWE,Zimbabwe,Zimbabwe Gold (ZiG),ZWG
+TWN,Taïwan,nouveau dollar taïwanais,TWD
