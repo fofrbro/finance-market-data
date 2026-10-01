@@ -1,0 +1,56 @@
+table dim_instrument
+	lineageTag: 81c57d78-0511-4379-9733-c65ae7a558a8
+	sourceLineageTag: [dbo].[dim_instrument]
+
+	column ticker
+		dataType: string
+		lineageTag: 72cd86e8-cac3-492c-9a27-3622869a48ed
+		sourceLineageTag: ticker
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom
+		dataType: string
+		lineageTag: f7cdb3ce-e66a-4928-94c5-6e17d9b6d2f1
+		sourceLineageTag: nom
+		summarizeBy: none
+		sourceColumn: nom
+
+		annotation SummarizationSetBy = Automatic
+
+	column place
+		dataType: string
+		lineageTag: 192d8fb0-b59d-4eb0-b368-f667cb45a080
+		sourceLineageTag: place
+		summarizeBy: none
+		sourceColumn: place
+
+		annotation SummarizationSetBy = Automatic
+
+	column devise
+		dataType: string
+		lineageTag: 34759d1c-ad1d-4a75-9688-3c0e84a4da3d
+		sourceLineageTag: devise
+		summarizeBy: none
+		sourceColumn: devise
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_instrument
+		dataType: string
+		lineageTag: 221558b9-c94c-4cd2-8fdd-9a1fbc548b40
+		sourceLineageTag: type_instrument
+		summarizeBy: none
+		sourceColumn: type_instrument
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_instrument = entity
+		mode: directLake
+		source
+			entityName: dim_instrument
+			schemaName: dbo
+			expressionSource: 'DirectLake - Finance'
+

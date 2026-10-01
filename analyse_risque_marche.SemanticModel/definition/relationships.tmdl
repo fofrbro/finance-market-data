@@ -1,0 +1,8 @@
+relationship 61c17660-61ea-741a-19cf-959f4b4fc2fe
+	fromColumn: silver_cours.date
+	toColumn: dim_date.date
+
+relationship 543121af-44d7-0aea-1d5a-85f0c4af78aa
+	fromColumn: silver_cours.ticker
+	toColumn: dim_instrument.ticker
+

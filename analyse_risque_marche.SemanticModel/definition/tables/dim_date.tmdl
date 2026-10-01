@@ -1,0 +1,69 @@
+table dim_date
+	lineageTag: 61b9971b-c541-4245-831a-4a7de40f50f7
+	sourceLineageTag: [dbo].[dim_date]
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9be9f8a1-2caf-445c-b5ff-5282ce0f3310
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a484d73-4c47-46a2-a2db-9bb41b5a9c63
+		sourceLineageTag: annee
+		summarizeBy: none
+		sourceColumn: annee
+
+		annotation SummarizationSetBy = Automatic
+
+	column mois
+		dataType: int64
+		formatString: 0
+		lineageTag: c931dd11-4359-462c-b002-af38aa0954e1
+		sourceLineageTag: mois
+		summarizeBy: none
+		sourceColumn: mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 89694721-1734-4898-a766-ef5a4be6f175
+		sourceLineageTag: trimestre
+		summarizeBy: none
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_mois
+		dataType: string
+		lineageTag: 6ae66231-b9eb-4775-8479-692d58b5778f
+		sourceLineageTag: nom_mois
+		summarizeBy: none
+		sourceColumn: nom_mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee_mois
+		dataType: string
+		lineageTag: 7b6d9c34-95d0-4db2-a3d1-d5615ed772c2
+		sourceLineageTag: annee_mois
+		summarizeBy: none
+		sourceColumn: annee_mois
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: dbo
+			expressionSource: 'DirectLake - Finance'
+

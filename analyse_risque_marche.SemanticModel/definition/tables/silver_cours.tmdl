@@ -1,0 +1,265 @@
+table silver_cours
+	lineageTag: 355a95c1-2c4b-40ad-9050-5ea85fd0e93f
+	sourceLineageTag: [dbo].[silver_cours]
+
+	measure 'Rendement moyen' = AVERAGE(silver_cours[rendement_usd])
+		lineageTag: 90fcdc9b-9a73-449d-a5f2-832f32cde81f
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Rendement annualisé' = [Rendement moyen] * 252
+		lineageTag: 79287e37-8d0a-4edc-a1cf-c181dde3c4da
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Volatilité annualisée' = STDEV.P(silver_cours[rendement_usd]) * SQRT(252)
+		lineageTag: 116ee14c-2bef-4768-a5cc-fa9ced9e39bd
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Sharpe = DIVIDE([Rendement annualisé] - 0.025, [Volatilité annualisée])
+		lineageTag: a9cd7928-c69f-4cf5-b68b-e894341b5b47
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 580fbb3c-1678-4a2f-bb1c-3d6a317f0708
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column close_ajuste
+		dataType: double
+		lineageTag: d7512225-9588-43a2-a1d6-42d4356d9791
+		sourceLineageTag: close_ajuste
+		summarizeBy: sum
+		sourceColumn: close_ajuste
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column high
+		dataType: double
+		lineageTag: 36e0c85b-6195-404a-91bf-0d0e61d8da6f
+		sourceLineageTag: high
+		summarizeBy: sum
+		sourceColumn: high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column low
+		dataType: double
+		lineageTag: 4cb3179c-5543-4bb4-ba35-495106079cda
+		sourceLineageTag: low
+		summarizeBy: sum
+		sourceColumn: low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column open
+		dataType: double
+		lineageTag: 1908eb2d-4526-4479-91ff-e14fd63fc7f4
+		sourceLineageTag: open
+		summarizeBy: sum
+		sourceColumn: open
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column volume
+		dataType: int64
+		formatString: 0
+		lineageTag: e3e1f131-1d35-4c5b-a97b-4c66c91be516
+		sourceLineageTag: volume
+		summarizeBy: sum
+		sourceColumn: volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: 8a978cfe-2dce-4664-a2eb-8e4b4c608a59
+		sourceLineageTag: ticker
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom
+		dataType: string
+		lineageTag: 8bd510ec-9ece-4cc4-9ed1-c4d3fc1afa00
+		sourceLineageTag: nom
+		summarizeBy: none
+		sourceColumn: nom
+
+		annotation SummarizationSetBy = Automatic
+
+	column place
+		dataType: string
+		lineageTag: 01621356-144c-4c38-b603-34097a641349
+		sourceLineageTag: place
+		summarizeBy: none
+		sourceColumn: place
+
+		annotation SummarizationSetBy = Automatic
+
+	column devise
+		dataType: string
+		lineageTag: 464323a1-1e07-4808-8311-488f3334320e
+		sourceLineageTag: devise
+		summarizeBy: none
+		sourceColumn: devise
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_instrument
+		dataType: string
+		lineageTag: 23c12cd8-6864-46cf-8532-3eab8eb015a7
+		sourceLineageTag: type_instrument
+		summarizeBy: none
+		sourceColumn: type_instrument
+
+		annotation SummarizationSetBy = Automatic
+
+	column extrait_le
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e3c262fb-25b6-49cd-95c5-865c4618e1ac
+		sourceLineageTag: extrait_le
+		summarizeBy: none
+		sourceColumn: extrait_le
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_extraction
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5ef2bea4-a1c7-4cb6-89e6-2567c0df2a8c
+		sourceLineageTag: date_extraction
+		summarizeBy: none
+		sourceColumn: date_extraction
+
+		annotation SummarizationSetBy = Automatic
+
+	column close_veille
+		dataType: double
+		lineageTag: d70bdd94-f71c-4fb8-96eb-0c42f9d8e00a
+		sourceLineageTag: close_veille
+		summarizeBy: sum
+		sourceColumn: close_veille
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rendement
+		dataType: double
+		lineageTag: 451aa0b3-424e-4dbf-a047-5d6008e89436
+		sourceLineageTag: rendement
+		summarizeBy: sum
+		sourceColumn: rendement
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rendement_log
+		dataType: double
+		lineageTag: c164dd2c-4662-46da-a0de-04f3a9525dbe
+		sourceLineageTag: rendement_log
+		summarizeBy: sum
+		sourceColumn: rendement_log
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column premiere_cotation
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0a13c6fd-26b6-400c-83b7-0c0d5cce6c69
+		sourceLineageTag: premiere_cotation
+		summarizeBy: none
+		sourceColumn: premiere_cotation
+
+		annotation SummarizationSetBy = Automatic
+
+	column jours_historique
+		dataType: int64
+		formatString: 0
+		lineageTag: cc8286c4-3f22-476a-85be-4fa531e8d896
+		sourceLineageTag: jours_historique
+		summarizeBy: sum
+		sourceColumn: jours_historique
+
+		annotation SummarizationSetBy = Automatic
+
+	column taux_usd
+		dataType: double
+		lineageTag: 13684885-969a-4e49-a397-95abf480e59f
+		sourceLineageTag: taux_usd
+		summarizeBy: sum
+		sourceColumn: taux_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column close_usd
+		dataType: double
+		lineageTag: 3672cf51-5d23-4164-8ec0-8ea60e4b1745
+		sourceLineageTag: close_usd
+		summarizeBy: sum
+		sourceColumn: close_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column close_usd_veille
+		dataType: double
+		lineageTag: 3baf7d42-4796-4531-8d95-67c0b5b7e4ba
+		sourceLineageTag: close_usd_veille
+		summarizeBy: sum
+		sourceColumn: close_usd_veille
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rendement_usd
+		dataType: double
+		lineageTag: f39eb475-9c5a-471d-8813-d5ffc6e3c146
+		sourceLineageTag: rendement_usd
+		summarizeBy: sum
+		sourceColumn: rendement_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition silver_cours = entity
+		mode: directLake
+		source
+			entityName: silver_cours
+			schemaName: dbo
+			expressionSource: 'DirectLake - Finance'
+

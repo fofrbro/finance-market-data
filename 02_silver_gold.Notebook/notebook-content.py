@@ -277,6 +277,24 @@ silver_fx = (silver_fx
         (F.col("close_usd") - F.col("close_usd_veille")) / F.col("close_usd_veille"))
 )
 
+
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+(silver_fx.write
+    .format("delta")
+    .mode("overwrite")
+    .option("overwriteSchema", "true")
+    .partitionBy("ticker")
+    .saveAsTable("silver_cours"))
+
 # METADATA ********************
 
 # META {

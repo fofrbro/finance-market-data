@@ -1,0 +1,11 @@
+expression 'DirectLake - Finance' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/6ba9ea4f-497e-4523-be3f-90d070c024ca/43630661-3f6c-4806-8ff4-32474588fd0f", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 43f7a004-c463-4f03-bb79-521b529ed691
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[gold_metriques]"}},"objectType":"Table"}]
+
